@@ -1,4 +1,4 @@
 test:
-	./node_modules/.bin/nodeunit test/node.js
+	./node_modules/.bin/nodeunit test/placefinder.test.js
 
 .PHONY: test

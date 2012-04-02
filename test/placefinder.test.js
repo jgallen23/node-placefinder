@@ -26,3 +26,22 @@ exports.woeid = function(t) {
     t.done();
   });
 };
+
+exports.city = function(t) {
+  var pf = new PlaceFinder(appID);
+  var city = "Hermosa B";
+  pf.city(city, function(err, data) {
+    t.equal(data.ResultSet.Found, 1);
+    t.equal(data.ResultSet.Results[0].city, "Hermosa Beach");
+    t.done();
+  });
+};
+
+exports.zip = function(t) {
+  var pf = new PlaceFinder(appID);
+  var zip = "90254";
+  pf.zip(zip, function(err, data) {
+    t.equal(data.ResultSet.Results[0].city, "Hermosa Beach");
+    t.done();
+  });
+};
